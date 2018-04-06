@@ -21,3 +21,8 @@ pagehelper:
   reasonable: true
   supportMethodsArguments: true
   params: count=countSql
+
+flyway:
+  enabled: false
+  locations: classpath:db/migration
+  baseline-on-migrate: true
