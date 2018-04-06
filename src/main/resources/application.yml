@@ -1,0 +1,23 @@
+server:
+  port: 9999
+
+spring:
+  profiles:
+    active: dev
+
+    
+mybatis:
+  mapper-locations: classpath*:mapper/*.xml  
+  type-aliases-package: com.goosun.glass.domain
+
+mapper:
+    mappers:
+        - com.goosun.glass.dao
+    not-empty: false
+    identity: MYSQL
+
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
