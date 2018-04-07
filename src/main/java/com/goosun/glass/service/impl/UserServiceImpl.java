@@ -20,9 +20,24 @@ public class UserServiceImpl implements UserService{
 		return userDao.findUserInfo();
 	}
 
+
 	@Override
-	public void insert(User user) {
-		userDao.addUserInfo(user);
+	public User getByUsername(String username) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public User insert(User user) {
+		int id = userDao.addUserInfo(user);
+		return get(id);
+	}
+
+
+	@Override
+	public User get(int id) {
+		return userDao.get(id);
 	}
 
 }

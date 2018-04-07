@@ -12,6 +12,9 @@ import com.goosun.glass.domain.User;
 @Mapper
 public interface UserDao {
 
+	@Select("SELECT * FROM user where id=#{id}")
+	public User get(int id);
+	
 	@Select("SELECT * FROM user ")
 	public List<User> findUserInfo();
 	
@@ -20,4 +23,6 @@ public interface UserDao {
 	
 	@Delete("delete from user where id=#{id}")
 	public int delUserInfo(int id);
+	
+	
 }

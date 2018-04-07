@@ -7,5 +7,10 @@ import com.goosun.glass.domain.User;
 public interface UserService {
 	public List<User> getUserInfo();
 
-	public void insert(User user);
+	public User get(int id);
+	
+	public User insert(User user);
+	
+	public User getByUsername(String username);
+	
 }
