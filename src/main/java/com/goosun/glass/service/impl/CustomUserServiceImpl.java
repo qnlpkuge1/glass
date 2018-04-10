@@ -4,10 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
 import com.goosun.glass.domain.User;
 import com.goosun.glass.service.UserService;
 
+@Service
 public class CustomUserServiceImpl implements UserDetailsService{
 	@Autowired
     UserService userService;
@@ -18,7 +20,7 @@ public class CustomUserServiceImpl implements UserDetailsService{
             throw new UsernameNotFoundException("用户名不存在");
         }
         System.out.println("s:"+s);
-        System.out.println("username:"+user.getName()+";password:"+user.getPassword());
+        System.out.println("username:"+user.getUsername()+";password:"+user.getPassword());
         return user;
     }
 

@@ -1,5 +1,0 @@
-CREATE TABLE `user` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID',
-  `name` varchar(50) NOT NULL COMMENT '用户名',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8

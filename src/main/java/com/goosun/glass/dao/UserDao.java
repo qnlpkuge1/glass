@@ -1,10 +1,9 @@
 package com.goosun.glass.dao;
 
-import java.util.List;
-
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
 
 import com.goosun.glass.domain.User;
@@ -12,17 +11,21 @@ import com.goosun.glass.domain.User;
 @Mapper
 public interface UserDao {
 
-	@Select("SELECT * FROM user where id=#{id}")
+	@Select("SELECT * FROM user where id=#{id} limit 1")
 	public User get(int id);
 	
-	@Select("SELECT * FROM user ")
-	public List<User> findUserInfo();
+	@Select("SELECT * FROM user where username=#{username} limit 1")
+	public User getByUsername(String username);
 	
-	@Insert("INSERT INTO user(name) VALUES(#{name})")
-	public int addUserInfo(User user);
+	@Insert("INSERT INTO user(username,password,title,type,point,coin,smallAvatar,mediumAvatar,largeAvatar,"
+			+ "mobile,setup,roles,locked,loginTime,loginIp,loginSessionId,createdIp,createdTime) "
+			+ "VALUES(#{username},#{password},#{title},#{type},#{point},#{coin},#{smallAvatar},#{mediumAvatar},#{largeAvatar},"
+			+ "#{mobile},#{setup},#{roles},#{locked},#{loginTime},#{loginIp},#{loginSessionId},#{createdIp},#{createdTime,jdbcType=TIMESTAMP})")
+	@Options(useGeneratedKeys = true, keyProperty = "id", keyColumn = "id")
+	public int addUser(User user);
 	
-	@Delete("delete from user where id=#{id}")
-	public int delUserInfo(int id);
+	@Delete("delete from user where id=#{id} limit 1")
+	public int delete(int id);
 	
 	
 }
