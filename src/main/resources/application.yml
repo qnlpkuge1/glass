@@ -1,5 +1,9 @@
 server:
   port: 9999
+  session:
+    timeout: 1800
+    redis:
+      namespace: session
 
 spring:
   profiles:
@@ -27,3 +31,5 @@ flyway:
   locations: classpath:db/migration
   baseline-on-migrate: true
   
+    
+    

@@ -19,12 +19,8 @@ public class UserServiceImpl implements UserService{
 
 	@Autowired
 	private UserDao userDao;
-	
-	@Override
-	public List<User> getUserInfo() {
-		return null;
-	}
 
+	
 
 	@Override
 	public User getByUsername(String username) {
@@ -45,7 +41,7 @@ public class UserServiceImpl implements UserService{
 
 
 	@Override
-	public User get(int id) {
+	public User get(Long id) {
 		return userDao.get(id);
 	}
 	
@@ -69,6 +65,18 @@ public class UserServiceImpl implements UserService{
 			throw new ServiceException("用户名已存在！");
 		}
 
+	}
+
+
+	@Override
+	public boolean lockUser(Long id) {
+		return false;
+	}
+
+
+	@Override
+	public boolean unlockUser(Long id) {
+		return false;
 	}
 
 }

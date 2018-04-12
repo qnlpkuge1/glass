@@ -1,6 +1,7 @@
 package com.goosun.glass.app;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.annotation.Resource;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -9,7 +10,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.web.access.AccessDeniedHandler;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import com.goosun.glass.service.impl.CustomUserServiceImpl;
 
@@ -17,13 +18,16 @@ import com.goosun.glass.service.impl.CustomUserServiceImpl;
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
+	
 	@Bean
 	UserDetailsService customUserService() {
 		return new CustomUserServiceImpl();
 	}
-
-	@Autowired
-	private AccessDeniedHandler accessDeniedHandler;
+	
+	@Resource(name="cuzUsernamePasswordAuthenticationFilter")
+	private UsernamePasswordAuthenticationFilter cuzUsernamePasswordAuthenticationFilter;
+	
+	
 
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -32,11 +36,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.csrf().disable().authorizeRequests().antMatchers("/", "/home", "/about","/webjars/**", "/css/**", "/js/**", "/images/**")
-				.permitAll().antMatchers("/admin/**").hasAnyRole("ADMIN").antMatchers("/user/**").hasAnyRole("USER")
-				.anyRequest().authenticated().and().formLogin().loginPage("/login").permitAll().and().logout()
-				.permitAll().and().exceptionHandling().accessDeniedHandler(accessDeniedHandler);
 
+		http.addFilterAt(cuzUsernamePasswordAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
+
+		http.csrf().disable().authorizeRequests()
+				.antMatchers("/", "/home", "/about", "/webjars/**", "/css/**", "/js/**", "/images/**").permitAll()
+				.antMatchers("/admin/**").hasAnyRole("ADMIN").antMatchers("/user/**").hasAnyRole("USER").anyRequest()
+				.authenticated().and().formLogin().loginPage("/login").permitAll().and().logout().permitAll().and()
+				.sessionManagement().maximumSessions(2);
 	}
 
 	@Bean

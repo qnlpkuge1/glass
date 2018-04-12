@@ -15,7 +15,13 @@ spring:
     maxWait: 60000
   thymeleaf: 
     cache: true
-    
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 2
+  session:
+    store-type: redis
+
 logging:
   level:
     ROOT: ERROR

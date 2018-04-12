@@ -12,7 +12,7 @@ import com.goosun.glass.domain.User;
 public interface UserDao {
 
 	@Select("SELECT * FROM user where id=#{id} limit 1")
-	public User get(int id);
+	public User get(Long id);
 	
 	@Select("SELECT * FROM user where username=#{username} limit 1")
 	public User getByUsername(String username);
@@ -25,7 +25,7 @@ public interface UserDao {
 	public int addUser(User user);
 	
 	@Delete("delete from user where id=#{id} limit 1")
-	public int delete(int id);
+	public int delete(Long id);
 	
 	
 }

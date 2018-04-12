@@ -1,17 +1,20 @@
 package com.goosun.glass.domain;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 public class User implements Serializable, UserDetails{
 
 	private static final long serialVersionUID = 1L;
 	
-	private int id;
+	private Long id;
 	
 	private String username;
 	
@@ -38,10 +41,6 @@ public class User implements Serializable, UserDetails{
 	private boolean setup;
 	
 	private String roles;
-	
-	private boolean promoted;
-	
-	private long promotedTime;
 	
 	private boolean locked;
 	
@@ -122,18 +121,6 @@ public class User implements Serializable, UserDetails{
 	public void setRoles(String roles) {
 		this.roles = roles;
 	}
-	public boolean isPromoted() {
-		return promoted;
-	}
-	public void setPromoted(boolean promoted) {
-		this.promoted = promoted;
-	}
-	public long getPromotedTime() {
-		return promotedTime;
-	}
-	public void setPromotedTime(long promotedTime) {
-		this.promotedTime = promotedTime;
-	}
 	public boolean isLocked() {
 		return locked;
 	}
@@ -177,17 +164,17 @@ public class User implements Serializable, UserDetails{
 		this.username = username;
 	}
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + id;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
 	@Override
@@ -199,16 +186,18 @@ public class User implements Serializable, UserDetails{
 		if (getClass() != obj.getClass())
 			return false;
 		User other = (User) obj;
-		if (id != other.id)
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
 			return false;
 		return true;
 	}
-	
-	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		// TODO Auto-generated method stub
-		return null;
+		List<SimpleGrantedAuthority> authorities = new ArrayList<>();
+//		authorities.add(new SimpleGrantedAuthority(user.getRole().name()));
+		return authorities;
 	}
 	@Override
 	public String getPassword() {
