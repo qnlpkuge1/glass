@@ -1,7 +1,6 @@
 package com.goosun.glass.service.impl;
 
 import java.util.Date;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -15,7 +14,7 @@ import com.goosun.glass.service.UserService;
 
 @Service
 @Transactional
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl extends BaseService implements UserService{
 
 	@Autowired
 	private UserDao userDao;

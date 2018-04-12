@@ -23,11 +23,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	UserDetailsService customUserService() {
 		return new CustomUserServiceImpl();
 	}
-	
-	@Resource(name="cuzUsernamePasswordAuthenticationFilter")
-	private UsernamePasswordAuthenticationFilter cuzUsernamePasswordAuthenticationFilter;
-	
-	
 
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -36,8 +31,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-
-		http.addFilterAt(cuzUsernamePasswordAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
 
 		http.csrf().disable().authorizeRequests()
 				.antMatchers("/", "/home", "/about", "/webjars/**", "/css/**", "/js/**", "/images/**").permitAll()
