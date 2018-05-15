@@ -1,11 +1,9 @@
 spring:
   profiles: dev
-  
-spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     database-name: glass
-    url: jdbc:mysql://localhost:3306/glass
+    url: jdbc:mysql://localhost:3306/glass?useSSL=false
     username: root
     password: qnlpkuge
     type: com.alibaba.druid.pool.DruidDataSource
@@ -13,7 +11,7 @@ spring:
     minIdle: 5
     maxActive: 20
     maxWait: 60000
-  thymeleaf: 
+  thymeleaf:
     cache: false
   redis:
     host: 127.0.0.1

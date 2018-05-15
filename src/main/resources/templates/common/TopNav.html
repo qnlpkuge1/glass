@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="topNav" th:fragment="nav">
+    <el-row :gutter="2">
+        <el-col :xs="1" :sm="1" :md="1" :lg="1" :xl="1" class="hidden-md-and-up">
+            <li class="topnav-item">
+                <a href="">
+                    <i class="icon iconfont iconfont-lg icon-liebiao2"></i>
+                </a>
+            </li>
+        </el-col>
+        <el-col :xs="16" :sm="16" :md="4" :lg="3" :xl="3" ><div class="siteName left">中华眼镜网</div></el-col>
+        <el-col :xs="1" :sm="1" :md="10" :lg="12" :xl="12" class="hidden-sm-and-down">
+            <ul>
+                <li class="topnav-item left">
+                    <a href="#" >太阳镜</a>
+                </li>
+                <li class="topnav-item left">
+                    <a href="#" >光学镜</a>
+                </li>
+                <li class="topnav-item left">
+                    <a href="#" >专属定制</a>
+                </li>
+            </ul>
+        </el-col>
+
+
+        <el-col :xs="6" :sm="6" :md="5" :lg="5" :xl="5" class="right">
+            <ul class="right">
+                <li class="topnav-item">
+                    <a href="/login" >登录</a>
+                </li>
+                <li class="topnav-item">
+                    <a href="/register" >注册</a>
+                </li>
+                <li class="topnav-item hidden-sm-and-down">
+                    <a href="#" >
+                        <i class="icon iconfont iconfont-lg icon-tianmaochaoshigouwuche"></i>
+                    </a>
+                </li>
+            </ul>
+        </el-col>
+        <el-col :xs="1" :sm="1" :md="4" :lg="3" :xl="3" class="hidden-sm-and-down right">
+            <el-input class="topnav-search right" placeholder="搜索" suffix-icon="el-icon-search"></el-input>
+        </el-col>
+    </el-row>
+</div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div th:fragment="poster">
+    <el-carousel height="414px">
+        <el-carousel-item v-for="poster in posters">
+            <img :src="poster">
+        </el-carousel-item>
+    </el-carousel>
+</div>
+</body>
+</html>

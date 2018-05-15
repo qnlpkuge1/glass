@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorate="~{/layout}">
+<head>
+    <style type="text/css">
+
+        .el-carousel__item img {
+            height: auto;
+            width: 100%;
+        }
+
+        .common-bar {
+            height: 40px;
+            line-height: 40px;
+            clear: both;
+            color: #909399;
+        }
+
+        .section-list {
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .bg-purple-light {
+            background: #e5e9f2;
+            height: 252px;
+        }
+
+        .bg-purple-dark {
+            background: #e5e9f2;
+            height: 114px;
+            padding-top: 12px;
+        }
+
+        .bg-purple {
+            background: #99a9bf;
+            height: 114px;
+        }
+
+        .grid-content {
+            border-radius: 4px;
+            min-height: 36px;
+            text-align: center;
+            color: #909399;
+            font-size: 14px;
+        }
+
+        .grid-content img {
+            width: 100%;
+            height: 252px;
+        }
+
+        .grid-item-card {
+            width: 268px;
+            height: 228px;
+            float: left;
+            margin: 8px 8px;
+            text-align: center;
+            color: #909399;
+            font-size: 14px;
+
+        }
+
+        .grid-item-card img {
+            height: 148px;
+            width: 268px;
+
+        }
+
+        .banner img {
+            width: 100%;
+            height: 252px;
+        }
+    </style>
+
+</head>
+<body th:with="scriptController='index'">
+<div id="index" layout:fragment="content" >
+
+    <div th:replace="~{common/Carousel::poster}"></div>
+
+    <div class="container text-align-center common-bar">
+        <el-row height="50px">
+            <el-col :span="7">
+                <div class="left"><i class="icon iconfont iconfont-lg icon-servicetuihuobaozhangqia"></i>品质保障</div>
+            </el-col>
+            <el-col :span="6">
+                <div class="left"><i class="icon iconfont iconfont-lg icon-servicezhengpinbaozhang"></i>品质保障</div>
+            </el-col>
+            <el-col :span="5">
+                <div><i class="icon iconfont iconfont-lg icon-serviceanshifahuo"></i>快速发货</div>
+            </el-col>
+            <el-col :span="6">
+                <div class="right"><i class="icon iconfont iconfont-lg icon-tesefuwu"></i>特色服务</div>
+            </el-col>
+        </el-row>
+    </div>
+
+    <div class="container">
+        <el-row :gutter="12">
+            <el-col :span="12" class="linespace">
+                <div class="grid-content"><img src="/img/1525159979651.jpg"></div>
+            </el-col>
+            <el-col :span="12">
+                <el-row :gutter="12" class="linespace">
+                    <el-col :span="24">
+                        <div class="grid-content bg-purple">2222222</div>
+                    </el-col>
+                </el-row>
+                <el-row :gutter="12" class="linespace">
+                    <el-col :span="12">
+                        <div class="grid-content bg-purple-dark">
+                            <h4>定制分享</h4>
+                            流行款式定制分享专场
+                        </div>
+                    </el-col>
+                    <el-col :span="12">
+                        <div class="grid-content bg-purple-dark">
+                            <h4>每日签到</h4>
+                            签到送积分
+                        </div>
+                    </el-col>
+                </el-row>
+            </el-col>
+        </el-row>
+    </div>
+
+    <div class="container banner">
+        <el-row :gutter="12" class="linespace">
+            <el-col :span="12">
+                <div class="grid-content bg-purple-light">
+                    <img src="/img/banner/Banner_Desktop_Ray_Ban_Sunglasses_Wayfarer.jpeg">
+                </div>
+            </el-col>
+            <el-col :span="12">
+                <div class="grid-content bg-purple-light">
+                    <img src="/img/banner/Banner_Desktop_Ray_Ban_Eyeglasses_x2.jpeg">
+                </div>
+            </el-col>
+        </el-row>
+
+        <el-row :gutter="12" class="linespace">
+            <el-col :span="24">
+                <div class="grid-content bg-purple-light">
+                    <img src="/img/banner/Remix-Banner_Sunglasses_960X231_CN_x2.jpeg">
+                </div>
+            </el-col>
+        </el-row>
+    </div>
+
+    <section class="section-list">
+        <div class="container">
+            <div class="text-line text-align-center">
+                <h2>太阳镜</h2>
+            </div>
+            <div v-for="sunglass in sunglasses">
+                <el-card class="grid-item-card" :body-style="{ padding: '0px'}" shadow="hover">
+                    <img :src="sunglass.img" class="image">
+                    <div>
+                        <span>{{sunglass.name}}</span>
+                        <div class="bottom clearfix">
+                            <span class="price"><i class="icon iconfont icon-goumai"></i>{{sunglass.price}}</span>
+                        </div>
+                    </div>
+                </el-card>
+            </div>
+            <div align="center">
+                <el-button>更多款式</el-button>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-list">
+        <div class="container">
+            <div class="text-line text-align-center">
+                <h2>光学镜</h2>
+            </div>
+            <div v-for="eyeglass in eyeglasses">
+                <el-card class="grid-item-card" :body-style="{ padding: '0px'}" shadow="hover">
+                    <img :src="eyeglass.img" class="image">
+                    <div>
+                        <span>{{eyeglass.name}}</span>
+                        <div class="bottom clearfix">
+                            <span class="price price-md"><i
+                                    class="icon iconfont icon-goumai"></i>{{eyeglass.price}}</span>
+                        </div>
+                    </div>
+                </el-card>
+            </div>
+            <div align="center">
+                <el-button>更多款式</el-button>
+            </div>
+        </div>
+    </section>
+
+
+</div>
+</body>
+</html>

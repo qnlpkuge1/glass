@@ -1,11 +1,9 @@
 spring:
   profiles: prod
-  
-spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     database-name: glass_prod
-    url: jdbc:mysql://localhost:3306/glass_prod
+    url: jdbc:mysql://localhost:3306/glass_prod?useSSL=false
     username: root
     password: qnlpkuge
     type: com.alibaba.druid.pool.DruidDataSource
@@ -14,7 +12,7 @@ spring:
     maxActive: 20
     maxWait: 60000
   thymeleaf: 
-    cache: true
+    cache: false
   redis:
     host: 127.0.0.1
     port: 6379

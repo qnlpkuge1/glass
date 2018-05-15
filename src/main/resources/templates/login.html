@@ -1,56 +1,67 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorate="~{/layout}">
 <head>
-<title>Spring Security Example</title>
-<div th:replace="fragments/header :: header-css" />
+    <style>
+        .login-panel {
+            margin: 40px 0px;
+            height: 420px;
+            border: 1px solid #e6e6e6;
+            padding: 15px 45px;
+            border-radius: 4px;
+        }
+
+        .login-panel div {
+            margin-top: 15px;
+        }
+
+        .login-btn {
+            width: 100%;
+        }
+
+        .login-type-btn {
+            padding: 4px;
+            font-size: 10px !important;
+        }
+    </style>
 </head>
-<body>
+<body th:with="scriptController='login'">
+<div class="container" layout:fragment="content">
+    <el-row>
+        <el-col :span="8">&nbsp;
+        </el-col>
+        <el-col :span="8" class="login-panel">
+            <el-form :model="loginForm" :rules="rules" ref="loginForm" action="login" @submit="doSubmit">
+                <el-form-item prop="username">
+                    <el-input v-model="loginForm.username" size="medium" placeholder="用户名或手机号码"></el-input>
+                </el-form-item>
+                <el-form-item prop="password">
+                    <el-input v-model="loginForm.password" size="medium" placeholder="密码" type="password"></el-input>
+                </el-form-item>
+                <div>
+                    <el-checkbox v-model="loginForm.remenberme">记住密码</el-checkbox>
+                </div>
+                <div>
+                    <el-button type="primary" class="login-btn" @click="submitForm('loginForm')">登录</el-button>
+                </div>
+                <div align="right">
+                    <el-button type="text" size="small">忘记密码</el-button>
+                    <el-button type="text" size="small">立即注册</el-button>
+                </div>
+                <div>
+                    <span>其他方式登录：</span>
+                    <el-button class="login-type-btn" type="success" icon="icon iconfont icon-weixin" size="mini"
+                               circle></el-button>
+                    <el-button class="login-type-btn" type="primary" icon="icon iconfont icon-qq" size="mini"
+                               circle></el-button>
+                </div>
+            </el-form>
+        </el-col>
+        <el-col :span="8">
 
-	<div th:replace="fragments/header :: header" />
-
-	<div class="container">
-
-		<div class="row" style="margin-top: 20px">
-			<div
-				class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-				<form th:action="@{/login}" method="post">
-					<fieldset>
-						<h1>Please Sign In</h1>
-
-						<div th:if="${param.error}">
-							<div class="alert alert-danger">Invalid username and
-								password.</div>
-						</div>
-						<div th:if="${param.logout}">
-							<div class="alert alert-info">You have been logged out.</div>
-						</div>
-
-						<div class="form-group">
-							<input type="text" name="username" id="username"
-								class="form-control input-lg" placeholder="UserName"
-								required="true" autofocus="true" />
-						</div>
-						<div class="form-group">
-							<input type="password" name="password" id="password"
-								class="form-control input-lg" placeholder="Password"
-								required="true" />
-						</div>
-
-						<div class="row">
-							<div class="col-xs-6 col-sm-6 col-md-6">
-								<input type="submit" class="btn btn-lg btn-primary btn-block"
-									value="Sign In" />
-							</div>
-							<div class="col-xs-6 col-sm-6 col-md-6"></div>
-						</div>
-					</fieldset>
-				</form>
-			</div>
-		</div>
-
-	</div>
-
-	<div th:replace="fragments/footer :: footer" />
-
+        </el-col>
+    </el-row>
+</div>
 </body>
 </html>

@@ -1,0 +1,164 @@
+body {
+    line-height: 22px;
+    font-size: 14px;
+    margin: 0px;
+    padding: 0px;
+    color: rgba(0, 0, 0, .56);
+    font-family: Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif;
+}
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+.iconfont-lg {
+    font-size: 24px;
+}
+
+.iconfont-sm {
+    font-size: 24px;
+}
+
+.price {
+    color: #F40;
+}
+
+.price-sd {
+    font-size: 14px;
+}
+
+.price-md {
+    font-size: 18px;
+}
+
+.price i {
+    font-size: 14px;
+}
+
+.linespace {
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.text-align-center{
+    text-align:center;
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 10px;
+    padding-right: 10px
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 740px
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 960px
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1160px
+    }
+}
+
+.topNav {
+    height: 60px;
+    border-bottom: solid 1px #e6e6e6;
+}
+
+.topNav .siteName {
+    font-size: 24px;
+    line-height: 60px;
+    color: #909399;
+    padding: 0 20px;
+    margin: 0 auto;
+    text-align: center;
+    text-decoration: none;
+}
+
+.topNav .topnav-item {
+    padding: 0 6px;
+    display: block;
+    float: left;
+    color: #909399;
+    text-decoration: none;
+}
+
+.topNav .topnav-item a {
+    color: #909399;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.topNav .topnav-search {
+    line-height: 60px;
+}
+
+
+.footer-link{
+    background: #2e2e2e;
+    margin-top: 12px;
+    padding: 55px 0;
+}
+
+.footer-link-left{
+    border-right: 1px solid #4B5054;
+}
+
+
+.footer-link .link-item{
+    width: 16%;
+    float: left;
+    padding: 0 10px;
+}
+
+.footer-link .link-about{
+    padding: 0 30px;
+    margin-top: 30px;
+}
+
+.footer-link .link-about .link-about-sns{
+    padding: 6px;
+    margin-top: 10px;
+}
+
+.footer-link .link-about div{
+    color: #c1c1c1;
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.footer-link h3{
+    font-size: 14px;
+    color: #eee;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.footer-link ul{
+    padding: 0px;
+}
+
+.footer-link li{
+    display:block;
+    margin-top: 20px;
+    text-align: -webkit-match-parent;
+}
+
+.footer-link a{
+    font-size: 12px;
+    color: #c1c1c1;
+    text-decoration: none;
+}

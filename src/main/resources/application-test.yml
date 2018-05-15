@@ -1,11 +1,9 @@
 spring:
   profiles: test
-  
-spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     database-name: glass_test
-    url: jdbc:mysql://localhost:3306/glass_test
+    url: jdbc:mysql://localhost:3306/glass_test?useSSL=false
     username: root
     password: qnlpkuge
     type: com.alibaba.druid.pool.DruidDataSource
