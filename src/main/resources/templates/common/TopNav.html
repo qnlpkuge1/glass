@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -15,7 +16,13 @@
                 </a>
             </li>
         </el-col>
-        <el-col :xs="16" :sm="16" :md="4" :lg="3" :xl="3" ><div class="siteName left">中华眼镜网</div></el-col>
+        <el-col :xs="16" :sm="16" :md="4" :lg="3" :xl="3" >
+            <div class="siteName left">
+                <a th:href="@{/}">
+                    中华眼镜网
+                </a>
+            </div>
+        </el-col>
         <el-col :xs="1" :sm="1" :md="10" :lg="12" :xl="12" class="hidden-sm-and-down">
             <ul>
                 <li class="topnav-item left">
@@ -32,7 +39,8 @@
 
 
         <el-col :xs="6" :sm="6" :md="5" :lg="5" :xl="5" class="right">
-            <ul class="right">
+
+            <ul class="right" th:if="${#httpServletRequest.remoteUser == null}">
                 <li class="topnav-item">
                     <a href="/login" >登录</a>
                 </li>
@@ -45,6 +53,14 @@
                     </a>
                 </li>
             </ul>
+
+            <div th:if="${#httpServletRequest.remoteUser != null}">
+                <p th:text="${#httpServletRequest.remoteUser}">
+                    sample_user
+                </p>
+            </div>
+
+
         </el-col>
         <el-col :xs="1" :sm="1" :md="4" :lg="3" :xl="3" class="hidden-sm-and-down right">
             <el-input class="topnav-search right" placeholder="搜索" suffix-icon="el-icon-search"></el-input>

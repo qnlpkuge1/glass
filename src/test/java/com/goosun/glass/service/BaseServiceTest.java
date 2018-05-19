@@ -11,7 +11,7 @@ import com.goosun.glass.component.EachTestInitialization;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-@ActiveProfiles("test")
+@ActiveProfiles("dev")
 public class BaseServiceTest {
 
 	@Autowired
