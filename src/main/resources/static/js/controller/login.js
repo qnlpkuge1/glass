@@ -19,23 +19,14 @@ new Vue({
     },
     methods: {
         submitForm(formName) {
-            console.log(this.loginForm);
             this.$refs[formName].validate((valid) => {
                 if(valid) {
-                    axios.post('/login', this.loginForm, {"headers": {'X-Requested-With': 'XMLHttpRequest'}}).then(function (response) {
-                        console.log(response);
-                    }).catch(function (error) {
-                        console.log(error);
-                    });
-                    console.log(this.loginForm);
-                    //this.$http.post('/login',this.loginForm,)
-                    alert('submit!');
-                    //console.log(this.$refs[formName]);
+                    var loginForm=document.getElementById("loginForm");
+                    loginForm.submit();
                 } else {
-                    console.log('error submit!!');
-            return false;
-        }
-        });
+                    return false;
+                }
+            });
         }
     }
 });

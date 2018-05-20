@@ -39,19 +39,19 @@
                 Invalid username and password.
             </div>
 
-            <el-form :model="loginForm" :rules="rules" ref="loginForm" th:action="@{/login}" method="post" @submit="submitForm">
+            <el-form :model="loginForm" id="loginForm" :rules="rules" ref="loginForm" th:action="@{/login}" method="post" @submit="submitForm">
                 <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
                 <el-form-item prop="username">
                     <el-input v-model="loginForm.username" name="username" size="medium" placeholder="用户名或手机号码"></el-input>
                 </el-form-item>
                 <el-form-item prop="password">
-                    <el-input v-model="loginForm.password" name="password" size="medium" placeholder="密码" type="password"></el-input>
+                    <el-input v-model="loginForm.password" name="password" size="medium" placeholder="密码" type="password" @keyup.enter.native="submitForm('loginForm')"></el-input>
                 </el-form-item>
                 <div>
                     <el-checkbox name="remember-me">记住密码</el-checkbox>
                 </div>
                 <div>
-                    <el-button type="primary" class="login-btn" native-type="submit">登录</el-button>
+                    <el-button type="primary" class="login-btn" @click="submitForm('loginForm')">登录</el-button>
                 </div>
                 <div align="right">
                     <el-button type="text" size="small">忘记密码</el-button>
