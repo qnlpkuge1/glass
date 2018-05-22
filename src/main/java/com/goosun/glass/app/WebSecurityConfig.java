@@ -1,5 +1,6 @@
 package com.goosun.glass.app;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -11,13 +12,19 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import com.goosun.glass.service.impl.CustomUserServiceImpl;
+import com.goosun.glass.service.user.impl.CustomUserServiceImpl;
+import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
+import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
+
+import javax.sql.DataSource;
 
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
+    @Autowired
+    DataSource dataSource;
 
     @Bean
     UserDetailsService customUserService() {
@@ -42,13 +49,24 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/user/**").hasAnyRole("USER").anyRequest()
                 .authenticated().and().formLogin().loginPage("/login")
                 .permitAll().and()
-                .logout().permitAll().and()
+                .logout().permitAll()
+                .and()
+                .rememberMe().rememberMeParameter("remember-me").tokenRepository(persistentTokenRepository())
+                .tokenValiditySeconds(1209600)
+                .and()
                 .sessionManagement().maximumSessions(2);
     }
 
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
+    }
+
+    @Bean
+    public PersistentTokenRepository persistentTokenRepository() {
+        JdbcTokenRepositoryImpl db = new JdbcTokenRepositoryImpl();
+        db.setDataSource(dataSource);
+        return db;
     }
 
 }

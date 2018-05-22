@@ -1,4 +1,4 @@
-package com.goosun.glass.dao;
+package com.goosun.glass.dao.user;
 
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;

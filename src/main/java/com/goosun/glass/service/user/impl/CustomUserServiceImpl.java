@@ -1,4 +1,4 @@
-package com.goosun.glass.service.impl;
+package com.goosun.glass.service.user.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -7,7 +7,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.goosun.glass.domain.User;
-import com.goosun.glass.service.UserService;
+import com.goosun.glass.service.user.UserService;
 
 @Service
 public class CustomUserServiceImpl implements UserDetailsService{

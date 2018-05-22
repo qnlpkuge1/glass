@@ -1,4 +1,4 @@
-package com.goosun.glass.service.impl;
+package com.goosun.glass.service;
 
 import org.springframework.security.core.context.SecurityContextHolder;
 

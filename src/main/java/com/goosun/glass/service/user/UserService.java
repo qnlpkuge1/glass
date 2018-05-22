@@ -1,4 +1,4 @@
-package com.goosun.glass.service;
+package com.goosun.glass.service.user;
 
 import com.goosun.glass.domain.User;
 

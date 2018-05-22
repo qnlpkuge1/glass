@@ -1,16 +1,17 @@
-package com.goosun.glass.service.impl;
+package com.goosun.glass.service.user.impl;
 
 import java.util.Date;
 
+import com.goosun.glass.service.BaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.goosun.glass.dao.UserDao;
+import com.goosun.glass.dao.user.UserDao;
 import com.goosun.glass.domain.User;
 import com.goosun.glass.service.ServiceException;
-import com.goosun.glass.service.UserService;
+import com.goosun.glass.service.user.UserService;
 
 @Service
 @Transactional
