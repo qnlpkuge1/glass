@@ -4,7 +4,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 
 import com.goosun.glass.domain.User;
 
-public class BaseService {
+public abstract class BaseService {
 
 	protected User currentUser() {
 

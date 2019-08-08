@@ -1,5 +1,6 @@
 package com.goosun.glass.app;
 
+import com.goosun.glass.service.user.impl.CustomUserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,12 +12,11 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-
-import com.goosun.glass.service.user.impl.CustomUserServiceImpl;
-import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
+import org.springframework.security.web.authentication.RememberMeServices;
+import org.springframework.security.web.authentication.rememberme.PersistentTokenBasedRememberMeServices;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
 
-import javax.sql.DataSource;
+import javax.annotation.Resource;
 
 @Configuration
 @EnableWebSecurity
@@ -24,7 +24,8 @@ import javax.sql.DataSource;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    DataSource dataSource;
+    @Resource(name = "persistentTokenService")
+    private PersistentTokenRepository persistentTokenRepository;
 
     @Bean
     UserDetailsService customUserService() {
@@ -38,23 +39,28 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers( "/static/**", "/css/**", "/js/**", "/img/**", "/fonts/**");
+        web.ignoring().antMatchers("/assets/**","/static/**", "/css/**","/app/**", "/js/**", "/img/**",
+                "/fonts/**","/**.ico","/**.jpg","/**.svg","/**.woff","/**.ttf");
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-
         http.authorizeRequests()
-                .antMatchers("/","/index").permitAll()
+                .antMatchers("/","/app","/udid", "/index","/udid.mobileconfig", "/UDID/install").permitAll()
                 .antMatchers("/user/**").hasAnyRole("USER").anyRequest()
-                .authenticated().and().formLogin().loginPage("/login")
-                .permitAll().and()
+                .authenticated()
+                .and()
+                .formLogin().loginPage("/login").permitAll()
+                .and()
                 .logout().permitAll()
                 .and()
-                .rememberMe().rememberMeParameter("remember-me").tokenRepository(persistentTokenRepository())
-                .tokenValiditySeconds(1209600)
+                .rememberMe()
+                .tokenRepository(persistentTokenRepository)
+                .rememberMeServices(rememberMeServices())
+                .rememberMeParameter("remember-me").key("uniqueAndSecret")
                 .and()
                 .sessionManagement().maximumSessions(2);
+        http.csrf().disable();
     }
 
     @Bean
@@ -63,10 +69,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
-    public PersistentTokenRepository persistentTokenRepository() {
-        JdbcTokenRepositoryImpl db = new JdbcTokenRepositoryImpl();
-        db.setDataSource(dataSource);
-        return db;
+    public RememberMeServices rememberMeServices() {
+        PersistentTokenBasedRememberMeServices rememberMeServices =
+                new PersistentTokenBasedRememberMeServices("uniqueAndSecret", customUserService(), persistentTokenRepository);
+        rememberMeServices.setCookieName("remember-me");
+        rememberMeServices.setParameter("remember-me");
+        rememberMeServices.setTokenValiditySeconds(864000);
+        return rememberMeServices;
     }
 
 }

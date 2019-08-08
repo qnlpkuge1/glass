@@ -17,7 +17,7 @@ public class UserServiceTest extends BaseServiceTest {
 	private UserService userService;
 	
 	
-	@Test
+	//@Test
 	public void testAddUser() {
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		String password = "admin123";
@@ -51,7 +51,7 @@ public class UserServiceTest extends BaseServiceTest {
 		
 	}
 	
-	@Test
+	//@Test
 //	@Test(expected = Exception.class)
 	public void testGetByUsername() {
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();

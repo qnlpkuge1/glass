@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="web-experience-app/config/environment" content="">
+    <!-- EMBER_CLI_FASTBOOT_TITLE -->
+    <link rel="stylesheet" name="fonts" href="/app/fonts">
+    <link rel="stylesheet" type="text/css" href="/app/ac-global-nav.1645091d62e2d52b95e1556af134429e.css"
+          data-global-elements-nav-styles="">
+    <link rel="stylesheet" type="text/css" href="/app/ac-global-footer.605cb131e43dd0a07ff6810b930b8706.css"
+          data-global-elements-footer-styles="">
+
+    <meta name="version" content="1930.6.0">
+
+    <link integrity="" rel="stylesheet" href="/app/web-experience-app-ab48286797800298a56c62d35d679736.css"
+          data-rtl="/assets/web-experience-rtl-app-501e5064bd3aafdf1c737488c2987005.css">
+
+    <meta name="ember-cli-head-start" content="">
+    <title>‎“龙之谷”</title>
+    <meta name="description" content="‎阅读评论、比较用户评分、查看屏幕快照并进一步了解“龙之谷”。在 iPhone、iPad 和 iPod touch 上下载“龙之谷”，尽享 App 丰富功能。"
+          id="ember172" class="ember-view">
+    </meta>
+    <meta name="keywords"
+          content="龙之谷, Tencent Mobile Games, 游戏, 角色扮演游戏, 娱乐, 动作游戏, ios apps, app, appstore, app store, iphone, ipad, ipod touch, itouch, itunes"
+          id="ember174" class="ember-view">
+    </meta>
+    <meta property="og:title" content="‎龙之谷" id="ember176" class="ember-view">
+    </meta>
+    <meta property="og:description" content="‎【游戏简介】
+龙之谷是一款3D动作冒险手游，轻松畅快3D无锁定战斗，原汁原味的经典形象，刻骨铭心的感动剧情，地狱犬、狮蝎，海龙等独创BOSS，难以预料的全新挑战，端游100%还原，绝对畅快指尖战斗，更有无差别的天梯公平竞技，给用户带来全新的体验。
+适用机型：iPhone5及以上
+推荐内存：1G以上
+iOS 6.0以上系统版本可以获得更好的游戏体验
+【游戏特色】
+——原味经典还原 重历阿尔特里亚
+还原继承了端游庞大的世界观和深厚的历史，经典的世界观、人物、剧情都会得到完美继承和精彩重塑，这一次，阿尔特里亚大陆由你拯救。
+——3D无锁定 畅爽打击
+３Ｄ无锁定战斗视角，操作、多种技能任意衔接组合，华…" id="ember178" class="ember-view">
+    </meta>
+    <meta property="og:site_name" content="App Store" id="ember180" class="ember-view">
+    </meta>
+    <meta property="og:image" content="/app/1200x630wa.png" id="ember184" class="ember-view">
+    </meta>
+    <meta property="og:image:alt" content="App Store 上的“龙之谷”" id="ember186" class="ember-view">
+    </meta>
+    <meta property="og:image:secure_url" content="/app/1200x630wa.png" id="ember188" class="ember-view">
+    </meta>
+    <meta property="og:image:type" content="image/png" id="ember190" class="ember-view">
+    </meta>
+    <meta property="og:image:width" content="1200" id="ember192" class="ember-view">
+    </meta>
+    <meta property="og:image:height" content="630" id="ember194" class="ember-view">
+    </meta>
+    <meta property="og:type" content="website" id="ember196" class="ember-view">
+    </meta>
+    <meta property="og:locale" content="zh_CN" id="ember198" class="ember-view">
+    </meta>
+    <meta property="fb:app_id" content="116556461780510" id="ember200" class="ember-view">
+    </meta>
+    <meta name="twitter:title" content="‎龙之谷" id="ember202" class="ember-view">
+    </meta>
+    <meta name="twitter:description" content="‎【游戏简介】
+龙之谷是一款3D动作冒险手游，轻松畅快3D无锁定战斗，原汁原味的经典形象，刻骨铭心的感动剧情，地狱犬、狮蝎，海龙等独创BOSS，难以预料的全新挑战，端游100%还原，绝对畅快指尖战斗，更有无差别的天梯公平竞技，给用户带来全新的体验。
+适用机型：iPhone5及以上
+推荐内存：1G以上
+iOS 6.0以上系统版本可以获得更好的游戏体验
+【游戏特色】
+——原味经典还原 重历阿尔特里亚
+还原继承了端游庞大的世界观和深厚的历史，经典的世界观、人物、剧情都会得到完美继承和精彩重塑，这一次，阿尔特里亚大陆由你拯救。
+——3D无锁定 畅爽打击
+３Ｄ无锁定战斗视角，操作、多种技能任意衔接组合，华…" id="ember204" class="ember-view">
+    </meta>
+    <meta name="twitter:site" content="@AppStore" id="ember206" class="ember-view">
+    </meta>
+    <meta name="twitter:domain" content="AppStore" id="ember208" class="ember-view">
+    </meta>
+    <meta name="twitter:image" content="/app/600x600wa.png" id="ember210" class="ember-view">
+    </meta>
+    <meta name="twitter:image:alt" content="App Store 上的“龙之谷”" id="ember212" class="ember-view">
+    </meta>
+    <meta name="twitter:card" content="summary_large_image" id="ember214" class="ember-view">
+    </meta>
+    <meta name="apple:content_id" content="1112094262" id="ember220" class="ember-view">
+    </meta>
+
+    <script src="/js/clipboard.min.js"></script>
+
+    <meta name="ember-cli-head-end" content="">
+</head>
+<body class="has-js ember-application has-touch">
+<div id="ember-app">
+
+    <div class="ember-view" id="ember168">
+
+        <main class="selfclear is-app-theme">
+            <label id="localnav-curtain" for="localnav-menustate"></label>
+
+            <div id="ember227" class="animation-wrapper is-visible ember-view">
+                <div id="ember228" class="ember-view">
+                    <div class="l-content-width we-banner" role="alert">
+                        <p class="we-banner__copy">只能在 iOS 设备上获取此 App。</p>
+                    </div>
+                </div>
+
+                <div id="ember229" class="ember-view">
+                    <section id="ember230" class="l-content-width section section--hero product-hero ember-view">
+                        <div class="l-row">
+                            <div class="product-hero__media l-column small-5 medium-4 large-3 small-valign-top">
+                                <picture id="ember231"
+                                         class="we-artwork ember-view product-hero__artwork we-artwork--fullwidth we-artwork--ios-app-icon">
+                                    <source class="we-artwork__source"
+                                            srcset="/app/246x0w.jpg 1x,/app/460x0w.jpg 2x,/app/690x0w.jpg 3x"
+                                            media="(min-width: 1069px)">
+                                    <!---->
+
+                                    <source class="we-artwork__source"
+                                            srcset="/app/217x0w.jpg 1x,/app/434x0w.jpg 2x,/app/651x0w.jpg 3x"
+                                            media="(min-width: 736px)">
+                                    <!---->
+
+                                    <source class="we-artwork__source"
+                                            srcset="/app/246x0w.jpg 1x,/app/492x0w.jpg 2x,/app/738x0w.jpg 3x">
+                                    <img class="we-artwork__image ember231" src="/app/246x0w.jpg"
+                                         style="background-color: #0a2235;" alt="" height="246" width="246">
+
+                                    <style>
+                                        .ember231, #ember231::before {
+                                            width: 246px;
+                                            height: 246px;
+                                        }
+
+                                        .ember231::before {
+                                            padding-top: 100%;
+                                        }
+
+                                        @media (min-width: 736px) {
+                                            .ember231, #ember231::before {
+                                                width: 217px;
+                                                height: 217px;
+                                            }
+
+                                            .ember231::before {
+                                                padding-top: 100%;
+                                            }
+                                        }
+
+                                        @media (min-width: 1069px) {
+                                            .ember231, #ember231::before {
+                                                width: 230px;
+                                                height: 230px;
+                                            }
+
+                                            .ember231::before {
+                                                padding-top: 100%;
+                                            }
+                                        }
+                                    </style>
+                                </picture>
+                            </div>
+
+                            <div class="l-column small-7 medium-8 large-9 small-valign-top">
+                                <header class="product-header app-header product-header--padded-start" role="banner">
+                                    <h1 class="product-header__title app-header__title">
+                                        龙之谷
+                                        <span class="badge badge--product-title">17+</span>
+                                    </h1>
+                                    <!----> <h2 class="product-header__identity app-header__identity">
+                                    Tencent Mobile Games
+                                </h2>
+                                    <ul class="product-header__list app-header__list">
+                                        <!---->
+                                        <li class="product-header__list__item app-header__list__item--user-rating">
+                                            <ul class="inline-list inline-list--mobile-compact">
+                                                <li class="inline-list__item">
+                                                    <figure aria-label="4.3（满分 5 分）" id="ember235"
+                                                            class="we-star-rating ember-view"><span
+                                                            class="we-star-rating-stars-outlines">
+  <span class="we-star-rating-stars we-star-rating-stars-4_5"></span>
+</span>
+                                                        <figcaption class="we-rating-count star-rating__count">4.3，1.8万
+                                                            个评分
+                                                        </figcaption>
+                                                    </figure>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <ul class="product-header__list app-header__list">
+                                        <!---->
+                                        <li class="product-header__list__item">
+                                            <ul class="inline-list inline-list--mobile-compact">
+                                                <li class="inline-list__item inline-list__item--bulleted app-header__list__item--price">
+                                                    免费
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <!----><!---->      </ul>
+                                    <!---->
+                                    <div class="product-header__routes app-header__routes">
+                                        <p class="product-header__routes__cta">
+                                            <a th:if="${param.udid}"
+                                               class="we-button we-button--outlined we-button--external icon"
+                                               href="itms-services://?action=download-manifest&url=https://192.168.3.6/ys.plist">安装</a>
+
+                                            <a th:unless="${param.udid}"
+                                               class="we-button we-button--outlined we-button--external icon"
+                                               href="udid.mobileconfig" target="_blank">安装</a>
+                                        </p>
+                                    </div>
+                                    <!----><!---->    </header>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="l-content-width section section--bordered">
+                        <div class="section__description">
+                            <h2 class="section__headline visuallyhidden">简介</h2>
+                            <div class="l-row">
+                                <div id="ember269"
+                                     class="we-truncate we-truncate--multi-line we-truncate--interactive ember-view l-column small-12 medium-9 large-8">
+
+                                    <div data-clamp="" id="ember271" class="we-clamp ember-view" ismorertl="false"
+                                         style="height: 90px; -webkit-mask: linear-gradient(0deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 18.0001px, rgb(0, 0, 0) 18.0001px), linear-gradient(270deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 16.4px, rgb(0, 0, 0) 52.4002px);">
+                                        <p dir="ltr" data-test-bidi="">【游戏简介】</p>
+                                        <p dir="ltr" data-test-bidi="">
+                                            龙之谷是一款3D动作冒险手游，轻松畅快3D无锁定战斗，原汁原味的经典形象，刻骨铭心的感动剧情，地狱犬、狮蝎，海龙等独创BOSS，难以预料的全新挑战，端游100%还原，绝对畅快指尖战斗，更有无差别的天梯公平竞技，给用户带来全新的体验。</p>
+                                        <p dir="ltr" data-test-bidi="">适用机型：iPhone5及以上</p>
+                                        <p dir="ltr" data-test-bidi="">推荐内存：1G以上</p>
+                                        <p dir="ltr" data-test-bidi="">iOS 6.0以上系统版本可以获得更好的游戏体验</p>
+                                        <p dir="ltr" data-test-bidi="">【游戏特色】</p>
+                                        <p dir="ltr" data-test-bidi="">——原味经典还原 重历阿尔特里亚</p>
+                                        <p dir="ltr" data-test-bidi="">
+                                            还原继承了端游庞大的世界观和深厚的历史，经典的世界观、人物、剧情都会得到完美继承和精彩重塑，这一次，阿尔特里亚大陆由你拯救。</p>
+                                        <p dir="ltr" data-test-bidi="">——3D无锁定 畅爽打击</p>
+                                        <p dir="ltr" data-test-bidi="">３Ｄ无锁定战斗视角，操作、多种技能任意衔接组合，华丽连招，给你最畅爽的战斗体验。</p>
+                                        <p dir="ltr" data-test-bidi="">——组队BOSS 合作不翻车</p>
+                                        <p dir="ltr" data-test-bidi="">
+                                            地狱犬、狮蝎、龙本，组队ＢＯＳＳ等你来战，叫上你的好Ｇ友，默契配合，打败机制丰富的ＢＯＳＳ吧。</p>
+                                        <p dir="ltr" data-test-bidi="">——酷炫时装 个性搭配</p>
+                                        <p dir="ltr" data-test-bidi="">
+                                            海龙套、熔岩套、水手套……经典套装应有尽有，风格各异的时装，张扬随性的搭配，将引领你走向时尚巅峰，带给你全新的视觉享受。</p>
+                                        <p dir="ltr" data-test-bidi="">——公平竞技 天梯对决</p>
+                                        <p dir="ltr" data-test-bidi="">实时天梯PVP，1V1 SOLO，实力说话，操作为王，用你的技术秀翻对手，登顶天梯。</p>
+                                        <p dir="ltr" data-test-bidi="">【特别说明】</p>
+                                        <p dir="ltr" data-test-bidi="">
+                                            在游戏《龙之谷》中，用户登录时可以选择“与QQ好友玩/与微信好友玩/游客登录”三种登录方式，在iOS设备上的游戏数据不互通（包括人物等级、金币、筹码等）。用户在游戏中购买的游戏代币“筹码”仅限于在本应用中使用，腾讯的虚拟货币，比如Q币、Q点无法在本应用中使用。</p>
+                                    </div>
+
+
+                                    <button aria-hidden="true" class="we-truncate__button link" data-ember-action=""
+                                            data-ember-action-448="448">
+                                        更多
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="l-content-width section section--bordered whats-new">
+                        <div class="section__nav section__nav--small">
+                            <h2 class="whats-new__headline">新内容</h2>
+                            <div data-test-we-modal="page-overlay" id="ember273" class="ember-view version-history">
+                                <button class="we-modal__show link" id="modal-trigger-ember273" data-ember-action=""
+                                        data-ember-action-274="274">版本记录
+                                </button>
+
+                                <!----></div>
+                        </div>
+                        <div class="l-row whats-new__content">
+                            <div class="l-column small-12 medium-3 large-4 small-valign-top whats-new__latest">
+                                <div class="l-row">
+                                    <time data-test-we-datetime="" datetime="2019-06-20T16:07:18.000Z"
+                                          aria-label="2019年6月21日" class="">2019年6月21日
+                                    </time>
+                                    <p class="l-column small-6 medium-12 whats-new__latest__version">版本 1.34.0</p>
+                                </div>
+                            </div>
+                            <div class="l-column small-12 medium-9 large-8 small-valign-top">
+                                <div id="ember275"
+                                     class="we-truncate we-truncate--multi-line we-truncate--interactive ember-view">
+
+                                    <div data-clamp="" id="ember277" class="we-clamp ember-view" ismorertl="false"
+                                         style="height: 90px; -webkit-mask: linear-gradient(0deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 18.0001px, rgb(0, 0, 0) 18.0001px), linear-gradient(270deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 16.4px, rgb(0, 0, 0) 52.4002px);">
+                                        <p dir="ltr" data-test-bidi="">【全新内容】</p>
+                                        <p dir="ltr" data-test-bidi="">1、画面升级</p>
+                                        <p dir="ltr" data-test-bidi="">全新UI界面改版迭代，界面更时尚、更清晰</p>
+                                        <p dir="ltr" data-test-bidi="">前期过场动画品质提升，场景品质提升</p>
+                                        <br>
+                                        <p dir="ltr" data-test-bidi="">2、全新职业</p>
+                                        <p dir="ltr" data-test-bidi="">人气角色黑暗教主正式登场</p>
+                                        <p dir="ltr" data-test-bidi="">为了拯救崩坏的大地，牧师抛弃了昔日的信仰转向黑暗以换取强大的力量，从此孤独地守望着这个世界</p>
+                                        <br>
+                                        <p dir="ltr" data-test-bidi="">3、全新副本</p>
+                                        <p dir="ltr" data-test-bidi="">符文龙全新副本降临，大型团队副本再升级，更为考验团队配合</p>
+                                        <p dir="ltr" data-test-bidi="">可通过通关幻龙起源副本后逐步解锁符文龙副本挑战</p>
+                                        <br>
+                                        <p dir="ltr" data-test-bidi="">4、全新玩法</p>
+                                        <p dir="ltr" data-test-bidi="">时空裂缝随机BOSS玩法开启</p>
+                                        <p dir="ltr" data-test-bidi="">由于巨石碑之门导致的时空混乱，曾经被击败的怪物们又一次出现在了阿尔特里亚大陆上</p>
+                                        <p dir="ltr" data-test-bidi="">英勇的冒险家们，再一次击败他们，维护世界的秩序吧</p>
+                                        <br>
+                                        <p dir="ltr" data-test-bidi="">5、休闲活动</p>
+                                        <p dir="ltr" data-test-bidi="">全新“躲猫猫”玩法上线</p>
+                                        <p dir="ltr" data-test-bidi="">冒险之余也要有轻松的休闲活动，重拾童年回忆，和伙伴一起你藏我找吧！</p>
+                                        <br>
+                                        <p dir="ltr" data-test-bidi="">【海量优化】</p>
+                                        <p dir="ltr" data-test-bidi="">1、前期升级流程调整，升级更快更丝滑</p>
+                                        <p dir="ltr" data-test-bidi="">2、龙之远征，深渊玩法去除</p>
+                                        <p dir="ltr" data-test-bidi="">3、龙魂禁地优化为只保留115级</p>
+                                        <p dir="ltr" data-test-bidi="">4、噩梦庭院产出优化</p>
+                                        <p dir="ltr" data-test-bidi="">5、BossRush优化，增加S级boss，挑战次数改为可购买次数</p>
+                                        <p dir="ltr" data-test-bidi="">6、小丑扑克牌消耗优化</p>
+                                        <p dir="ltr" data-test-bidi="">7、界面新增活动提醒</p>
+                                        <p dir="ltr" data-test-bidi="">8、玩家回流系统优化，奖励提升</p>
+                                        <p dir="ltr" data-test-bidi="">9、每日签到，136礼包，王国特权礼包奖励更新</p>
+                                        <p dir="ltr" data-test-bidi="">10、新增老玩家跳过首战、引导功能</p>
+                                        <p dir="ltr" data-test-bidi="">11、所有商店整合，统一至商店界面中。</p>
+                                        <p dir="ltr" data-test-bidi="">12、银弓特效加入特效屏蔽中</p>
+                                        <p dir="ltr" data-test-bidi="">13、称号属性优化为叠加属性</p>
+                                        <p dir="ltr" data-test-bidi="">14、装备获取自动穿戴</p>
+                                    </div>
+
+                                    <button aria-hidden="true" class="we-truncate__button link" data-ember-action=""
+                                            data-ember-action-449="449">
+                                        更多
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="l-content-width section section--bordered">
+                        <div class="section__nav">
+                            <h2 class="section__headline">评分及评论</h2>
+                        </div>
+                        <div id="ember279" class="we-customer-ratings lockup ember-view">
+                            <div class="l-row">
+                                <div class="we-customer-ratings__stats l-column small-4 medium-6 large-4">
+                                    <div class="we-customer-ratings__averages"><span
+                                            class="we-customer-ratings__averages__display">4.3</span>（满分 5 分）
+                                    </div>
+                                    <div class="we-customer-ratings__count small-hide medium-show">1.8万 个评分</div>
+                                </div>
+                                <div class=" l-column small-8 medium-6 large-4">
+                                    <figure class="we-star-bar-graph">
+                                        <div class="we-star-bar-graph__row">
+                                            <span class="we-star-bar-graph__stars we-star-bar-graph__stars--5"></span>
+                                            <div class="we-star-bar-graph__bar">
+                                                <div class="we-star-bar-graph__bar__foreground-bar"
+                                                     style="width: 73%;"></div>
+                                            </div>
+                                        </div>
+                                        <div class="we-star-bar-graph__row">
+                                            <span class="we-star-bar-graph__stars we-star-bar-graph__stars--4"></span>
+                                            <div class="we-star-bar-graph__bar">
+                                                <div class="we-star-bar-graph__bar__foreground-bar"
+                                                     style="width: 7%;"></div>
+                                            </div>
+                                        </div>
+                                        <div class="we-star-bar-graph__row">
+                                            <span class="we-star-bar-graph__stars we-star-bar-graph__stars--3"></span>
+                                            <div class="we-star-bar-graph__bar">
+                                                <div class="we-star-bar-graph__bar__foreground-bar"
+                                                     style="width: 4%;"></div>
+                                            </div>
+                                        </div>
+                                        <div class="we-star-bar-graph__row">
+                                            <span class="we-star-bar-graph__stars we-star-bar-graph__stars--2"></span>
+                                            <div class="we-star-bar-graph__bar">
+                                                <div class="we-star-bar-graph__bar__foreground-bar"
+                                                     style="width: 3%;"></div>
+                                            </div>
+                                        </div>
+                                        <div class="we-star-bar-graph__row">
+                                            <span class="we-star-bar-graph__stars "></span>
+                                            <div class="we-star-bar-graph__bar">
+                                                <div class="we-star-bar-graph__bar__foreground-bar"
+                                                     style="width: 13%;"></div>
+                                            </div>
+                                        </div>
+                                    </figure>
+                                    <p class="we-customer-ratings__count medium-hide">1.8万 个评分</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="l-row l-row--peek">
+
+                            <div id="ember287"
+                                 class="ember-view small-valign-top l-column--equal-height l-column small-4 medium-6 large-4">
+                                <div data-test-we-modal="page-overlay" id="ember288" class="ember-view"><!---->
+                                    <!----></div>
+
+
+                                <div aria-labelledby="we-customer-review-0" id="ember289"
+                                     class="we-customer-review lockup ember-view">
+                                    <figure aria-label="5（满分 5 分）" id="ember290"
+                                            class="we-star-rating ember-view we-customer-review__rating we-star-rating--large"><span
+                                            class="we-star-rating-stars-outlines">
+  <span class="we-star-rating-stars we-star-rating-stars-5"></span>
+</span>
+                                        <!----></figure>
+
+                                    <div class="we-customer-review__header we-customer-review__header--user">
+  <span dir="ltr" id="ember291" class="we-truncate we-truncate--single-line ember-view we-customer-review__user">  ceuWOan
+</span>
+
+                                        <span class="we-customer-review__separator">，</span>
+
+                                        <time data-test-customer-review-date="" datetime="2019-05-23T15:18:34.000Z"
+                                              aria-label="2019年5月23日" class="we-customer-review__date">2019年5月23日
+                                        </time>
+                                    </div>
+
+                                    <h3 dir="ltr" id="we-customer-review-0"
+                                        class="we-truncate we-truncate--single-line ember-view we-customer-review__title">
+                                        页面清晰流畅，人物设计逼真，战斗模式新颖独特，跟提示还能轻松完成任务，非常喜欢的一款三国手游，棒芳热
+                                    </h3>
+
+                                    <blockquote id="ember292"
+                                                class="we-truncate we-truncate--multi-line we-truncate--interactive ember-view we-customer-review__body">
+
+                                        <div data-clamp="" id="ember294" class="we-clamp ember-view" ismorertl="false"
+                                             style="height: 72px; -webkit-mask: linear-gradient(0deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 18.0001px, rgb(0, 0, 0) 18.0001px), linear-gradient(270deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 16.4px, rgb(0, 0, 0) 52.4002px);">
+                                            <p dir="ltr" data-test-bidi="">
+                                                这款游戏整体体验很好任务指导对于我们这种冒险手游游戏新手来说做的挺好的，确实很好用，里面有很多的攻略，还有很多地图走法，我玩游戏第一眼一定是看评论好评数，发现里面的好评挺多的，画面运跟剧情都不错，下来玩下载已经入迷了非常棒的一款角色扮演。</p>
+                                        </div>
+
+
+                                        <button aria-hidden="true" class="we-truncate__button link"
+                                                data-metrics-click="{&quot;actionType&quot;:&quot;more&quot;,&quot;targetType&quot;:&quot;button&quot;,&quot;targetId&quot;:&quot;more&quot;}"
+                                                data-ember-action="" data-ember-action-450="450">
+                                            更多
+                                        </button>
+                                    </blockquote>
+
+                                    <!----></div>
+
+                            </div>
+
+
+                            <div id="ember297"
+                                 class="ember-view small-valign-top l-column--equal-height l-column small-4 medium-6 large-4">
+                                <div data-test-we-modal="page-overlay" id="ember298" class="ember-view"><!---->
+                                    <!----></div>
+
+
+                                <div aria-labelledby="we-customer-review-1" id="ember299"
+                                     class="we-customer-review lockup ember-view">
+                                    <figure aria-label="5（满分 5 分）" id="ember300"
+                                            class="we-star-rating ember-view we-customer-review__rating we-star-rating--large"><span
+                                            class="we-star-rating-stars-outlines">
+  <span class="we-star-rating-stars we-star-rating-stars-5"></span>
+</span>
+                                        <!----></figure>
+
+                                    <div class="we-customer-review__header we-customer-review__header--user">
+  <span dir="ltr" id="ember301" class="we-truncate we-truncate--single-line ember-view we-customer-review__user">  风之真谛
+</span>
+
+                                        <span class="we-customer-review__separator">，</span>
+
+                                        <time data-test-customer-review-date="" datetime="2018-05-19T23:56:47.000Z"
+                                              aria-label="2018年5月20日" class="we-customer-review__date">2018年5月20日
+                                        </time>
+                                    </div>
+
+                                    <h3 dir="ltr" id="we-customer-review-1"
+                                        class="we-truncate we-truncate--single-line ember-view we-customer-review__title">
+                                        玩游戏半年之后的评价
+                                    </h3>
+
+                                    <blockquote id="ember302"
+                                                class="we-truncate we-truncate--multi-line we-truncate--interactive ember-view we-customer-review__body">
+
+                                        <div data-clamp="" id="ember304" class="we-clamp ember-view" ismorertl="false"
+                                             style="height: 72px; -webkit-mask: linear-gradient(0deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 18.0001px, rgb(0, 0, 0) 18.0001px), linear-gradient(270deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 16.4px, rgb(0, 0, 0) 52.4002px);">
+                                            <p dir="ltr" data-test-bidi="">
+                                                这款游戏氪金实话说用处不大，除非你充的特别多，当然天生一副欧皇脸(就是运气特别好的)当我没说，想玩好，必须要氪金加氪肝，x而且这款游戏本生很不错，有人说游戏职业不平衡，但每个职业都有自己的优缺点，只能说单挑时职业之间会有一些克制罢了，体力机制是不可能取消的，要不然就可以无限刷主线副本，等级无限生了，而且现在每天的体力其实已经够用了。</p>
+                                        </div>
+
+
+                                        <button aria-hidden="true" class="we-truncate__button link"
+                                                data-metrics-click="{&quot;actionType&quot;:&quot;more&quot;,&quot;targetType&quot;:&quot;button&quot;,&quot;targetId&quot;:&quot;more&quot;}"
+                                                data-ember-action="" data-ember-action-451="451">
+                                            更多
+                                        </button>
+                                    </blockquote>
+
+                                    <!----></div>
+
+                            </div>
+
+
+                            <div id="ember307"
+                                 class="ember-view small-valign-top l-column--equal-height l-column small-4 medium-6 large-4">
+                                <div data-test-we-modal="page-overlay" id="ember308" class="ember-view"><!---->
+                                    <!----></div>
+
+
+                                <div aria-labelledby="we-customer-review-2" id="ember309"
+                                     class="we-customer-review lockup ember-view">
+                                    <figure aria-label="5（满分 5 分）" id="ember310"
+                                            class="we-star-rating ember-view we-customer-review__rating we-star-rating--large"><span
+                                            class="we-star-rating-stars-outlines">
+  <span class="we-star-rating-stars we-star-rating-stars-5"></span>
+</span>
+                                        <!----></figure>
+
+                                    <div class="we-customer-review__header we-customer-review__header--user">
+  <span dir="ltr" id="ember311" class="we-truncate we-truncate--single-line ember-view we-customer-review__user"> kevin
+</span>
+
+                                        <span class="we-customer-review__separator">，</span>
+
+                                        <time data-test-customer-review-date="" datetime="2019-03-20T05:29:28.000Z"
+                                              aria-label="2019年3月20日" class="we-customer-review__date">2019年3月20日
+                                        </time>
+                                    </div>
+
+                                    <h3 dir="ltr" id="we-customer-review-2"
+                                        class="we-truncate we-truncate--single-line ember-view we-customer-review__title">
+                                        给游戏策划
+                                    </h3>
+
+                                    <blockquote id="ember312"
+                                                class="we-truncate we-truncate--multi-line we-truncate--interactive ember-view we-customer-review__body">
+
+                                        <div data-clamp="" id="ember314" class="we-clamp ember-view" ismorertl="false"
+                                             style="height: 72px; -webkit-mask: linear-gradient(0deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 18.0001px, rgb(0, 0, 0) 18.0001px), linear-gradient(270deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 16.4px, rgb(0, 0, 0) 52.4002px);">
+                                            <p dir="ltr" data-test-bidi="">
+                                                游戏攻略没有，副本太简单了。端游之前副本刷起来都比较难，现在除了当季新精英副本需要组队其余的都太简单；然后为了保护新人出了个分身援战真的是把这游戏彻底搞凉了，花点钱搞搞营销嘛、挺好的一个游戏、怎么换了接手人就这么肉鸡、以前还能跑地图看风景！现在简直了</p>
+                                        </div>
+
+
+                                        <button aria-hidden="true" class="we-truncate__button link"
+                                                data-metrics-click="{&quot;actionType&quot;:&quot;more&quot;,&quot;targetType&quot;:&quot;button&quot;,&quot;targetId&quot;:&quot;more&quot;}"
+                                                data-ember-action="" data-ember-action-452="452">
+                                            更多
+                                        </button>
+                                    </blockquote>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="l-row l-row--margin-top medium-hide">
+
+                        </div>
+                    </section>
+
+                    <!---->
+                    <!---->
+                    <section class="l-content-width section section--bordered">
+                        <div class="l-row">
+                            <div class="l-column small-12">
+                                <h2 class="section__headline">信息</h2>
+                                <dl class="information-list information-list--app medium-columns">
+                                    <div class="information-list__item l-row">
+                                        <dt class="information-list__item__term medium-valign-top l-column medium-3 large-2">
+                                            供应商
+                                        </dt>
+                                        <dd class="information-list__item__definition l-column medium-9 large-6">
+                                            Shenzhen Tencent Computer Systems Company Limited
+                                        </dd>
+                                    </div>
+                                    <div class="information-list__item l-row">
+                                        <dt class="information-list__item__term medium-valign-top l-column medium-3 large-2">
+                                            大小
+                                        </dt>
+                                        <dd class="information-list__item__definition l-column medium-9 large-6"
+                                            aria-label="1.6 GB">1.6 GB
+                                        </dd>
+                                    </div>
+                                    <div class="information-list__item l-row">
+                                        <dt class="information-list__item__term medium-valign-top l-column medium-3 large-2">
+                                            类別
+                                        </dt>
+                                        <dd class="information-list__item__definition l-column medium-9 large-6">
+                                            <a href="https://itunes.apple.com/cn/genre/id6014" class="link">游戏</a>
+                                        </dd>
+                                    </div>
+                                    <div class="information-list__item l-row">
+                                        <dt class="information-list__item__term medium-valign-top l-column medium-3 large-2">
+                                            兼容性
+                                        </dt>
+                                        <dd id="ember319"
+                                            class="we-truncate we-truncate--multi-line we-truncate--interactive ember-view information-list__item__definition l-column medium-9 large-6">
+
+                                            <div data-clamp="" id="ember321" class="we-clamp ember-view"><p dir="ltr"
+                                                                                                            data-test-bidi="">
+                                                需要 iOS 9.0 或更高版本。与 iPhone、iPad 和 iPod touch 兼容。</p>
+                                            </div>
+                                            <!----></dd>
+                                    </div>
+                                    <!---->
+                                    <div class="information-list__item l-row">
+                                        <dt class="information-list__item__term medium-valign-top l-column medium-3 large-2">
+                                            语言
+                                        </dt>
+                                        <dd id="ember323"
+                                            class="information-list__item__definition l-column medium-9 large-6 we-truncate we-truncate--multi-line we-truncate--interactive ember-view">
+
+                                            <div data-clamp="" id="ember325" class="we-clamp ember-view"><p dir="ltr"
+                                                                                                            data-test-bidi="">
+                                                中文</p>
+                                            </div>
+                                            <!----></dd>
+                                    </div>
+                                    <div class="information-list__item l-row">
+                                        <dt class="information-list__item__term medium-valign-top l-column medium-3 large-2">
+                                            年龄分级
+                                        </dt>
+                                        <dd class="information-list__item__definition l-column medium-9 large-6">您必须年满
+                                            17 周岁才能下载此 App。
+                                        </dd>
+                                    </div>
+                                    <div class="information-list__item l-row">
+                                        <dt class="information-list__item__term medium-valign-top l-column medium-3 large-2"
+                                            aria-hidden="true"></dt>
+                                        <dd class="information-list__item__definition l-column medium-9 large-6">
+                                            频繁/强烈的色情内容或裸露
+                                        </dd>
+                                    </div>
+                                    <div class="information-list__item l-row">
+                                        <dt class="information-list__item__term medium-valign-top l-column medium-3 large-2"
+                                            aria-hidden="true"></dt>
+                                        <dd class="information-list__item__definition l-column medium-9 large-6">
+                                            偶尔/轻微的卡通或幻想暴力
+                                        </dd>
+                                    </div>
+                                    <!---->
+                                    <div class="information-list__item l-row">
+                                        <dt class="information-list__item__term medium-valign-top l-column medium-3 large-2">
+                                            Copyright
+                                        </dt>
+                                        <dd class="information-list__item__definition l-column medium-9 large-6">
+                                            Copyright © 2015 Tencent. All Rights Reserved
+                                        </dd>
+                                    </div>
+                                    <div class="information-list__item l-row">
+                                        <dt class="information-list__item__term medium-valign-top l-column medium-3 large-2">
+                                            价格
+                                        </dt>
+                                        <dd class="information-list__item__definition l-column medium-9 large-6">免费</dd>
+                                    </div>
+                                    <div class="information-list__item l-row">
+                                        <dt class="information-list__item__term medium-valign-top l-column medium-3 large-2">
+                                            App&nbsp;内购买项目
+                                        </dt>
+                                        <dd class="information-list__item__definition l-column medium-9 large-6">
+                                            <ol role="table" class="list-with-numbers">
+                                                <div id="ember327" class="ember-view">
+                                                    <li class="list-with-numbers__item">
+                                                        <span class="list-with-numbers__item__title"><span
+                                                                class="truncate-single-line truncate-single-line--block">1元礼包</span></span>
+                                                        <span class="list-with-numbers__item__price small-hide medium-show-tablecell">¥1.00</span>
+                                                    </li>
+
+                                                    <li class="list-with-numbers__item">
+                                                        <span class="list-with-numbers__item__title"><span
+                                                                class="truncate-single-line truncate-single-line--block">6元礼包</span></span>
+                                                        <span class="list-with-numbers__item__price small-hide medium-show-tablecell">¥6.00</span>
+                                                    </li>
+
+                                                    <li class="list-with-numbers__item">
+                                                        <span class="list-with-numbers__item__title"><span
+                                                                class="truncate-single-line truncate-single-line--block">3元礼包</span></span>
+                                                        <span class="list-with-numbers__item__price small-hide medium-show-tablecell">¥3.00</span>
+                                                    </li>
+
+                                                    <button class="we-truncate__button we-truncate__button--top-offset link"
+                                                            aria-expanded="false" data-ember-action=""
+                                                            data-ember-action-331="331">
+                                                        更多
+                                                    </button>
+                                                </div>
+                                            </ol>
+                                        </dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+                </footer>
+                <script type="text/javascript"
+                        src="/app/ac-global-nav.c7103d404f0e331bb4a21cc5c10991c5.js"
+                        data-global-elements-nav-script="" async=""></script>
+                <script type="text/javascript"
+                        src="/app/ac-global-footer.d87aa5188a9a04c462d9d7452edb1b20.js"
+                        data-global-elements-footer-script="" async=""></script>
+</body>
+</html>

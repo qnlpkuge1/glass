@@ -26,3 +26,9 @@ logging:
     org.springframework: ERROR
     org.springframework.data: ERROR
     com.goosun.glass: INFO
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

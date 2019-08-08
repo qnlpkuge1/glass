@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class DefaultController {
 
 
+
     @GetMapping("/")
     public String defaultIndex() {
         return "index";
@@ -20,17 +21,22 @@ public class DefaultController {
 
     @GetMapping("/admin")
     public String admin() {
-        return "/admin";
+        return "admin";
+    }
+
+    @GetMapping("/udid")
+    public String udid() {
+        return "udid";
     }
 
     @GetMapping("/user")
     public String user() {
-        return "/user";
+        return "user";
     }
 
     @GetMapping("/login")
     public String login() {
-        return "/login";
+        return "login";
     }
 
     @GetMapping("/403")

@@ -1,0 +1,6 @@
+CREATE TABLE test (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    license_plate VARCHAR(64) NOT NULL,
+    color VARCHAR(64) NOT NULL,
+     PRIMARY KEY (`id`)
+)ENGINE=InnoDB  DEFAULT CHARSET=utf8;

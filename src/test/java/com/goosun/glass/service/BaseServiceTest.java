@@ -15,11 +15,11 @@ import org.springframework.transaction.annotation.Transactional;
 @ActiveProfiles("dev")
 public class BaseServiceTest {
 
-	@Autowired
-	private EachTestInitialization eachTestInitialization;
+	//@Autowired
+	//private EachTestInitialization eachTestInitialization;
 	
 	@Before
 	public void eachInit() throws Exception {
-		eachTestInitialization.init();
+		//eachTestInitialization.init();
 	}
 }
